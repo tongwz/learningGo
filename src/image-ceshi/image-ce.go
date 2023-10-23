@@ -30,5 +30,6 @@ func main() {
 	} else {
 		fmt.Println("当前工作目录：", dir)
 	}
+	http.Handle("/image", http.StripPrefix("/image", http.FileServer(http.Dir("./image"))))
 	log.Fatal(http.ListenAndServe("localhost:8080", nil))
 }
