@@ -24,7 +24,7 @@ func Image(writer http.ResponseWriter, request *http.Request) {
 }
 
 func main() {
-	http.HandleFunc("/", Image)
+	http.HandleFunc("/image", Image)
 	http.Handle("/static/", http.StripPrefix("/static/", http.FileServer(http.Dir("image"))))
 	dir, err := os.Getwd()
 	if err != nil {
