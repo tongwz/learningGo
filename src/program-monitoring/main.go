@@ -19,6 +19,7 @@ var supervisorPrograms = []string{
 	"integration:integrationServiceApi",
 	"integration:integrationServiceCrontab",
 	"integration:integrationServiceQueue",
+	"dtsCustomerService:dtsCustomerServiceQueue",
 }
 
 func main() {
@@ -57,13 +58,12 @@ func main() {
 			_ = httpSendRobot(fmt.Sprintf("查询running异常：%s, 直接重启, 重启结果：%s \n", program, resStr))
 		}
 	}
-
 }
 
 // http请求
 func httpSendRobot(content string) error {
 	// 设置请求的 Body 数据，这里以 JSON 格式为例
-	var reqInfo = map[string]interface{}{
+	reqInfo := map[string]interface{}{
 		"msgtype": "text",
 		"text": map[string]interface{}{
 			"content": content,

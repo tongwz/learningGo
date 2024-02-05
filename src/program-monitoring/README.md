@@ -12,3 +12,16 @@
 >
 > supervisorPrograms里面是要检测的服务，直接改代码，没有加到配置文件里。
 
+
+
+##### 编译项目
+
+> go build
+
+##### crontab -e 中加入定时任务
+
+```shell
+#每十分钟运行一次
+*/10 * * * * /data/twzDoc/sh/programMonitoring >> /data/twz/sh/programMonitor.log 2>&1
+```
+

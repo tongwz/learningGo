@@ -1,8 +1,10 @@
 package main
 
 import (
-	"github.com/gin-gonic/gin"
+	"fmt"
 	"learningGo/http/controller"
+
+	"github.com/gin-gonic/gin"
 )
 
 func main() {
@@ -17,6 +19,10 @@ func main() {
 	// 路由声明
 	// routers.NewApis(r.Group(""))
 	// routers.NewPCApi(r.Group(""))
+	list := []int{1, 2, 3, 4}
+	for key := range list {
+		fmt.Printf("我们打印了key:%d, 没有打印value \n", key)
+	}
 
 	// 设置api端口
 	_ = apiServer.Run(":8099")
