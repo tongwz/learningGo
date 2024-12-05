@@ -8,11 +8,11 @@ import (
 
 func main() {
 	err := converter.NewTable2Struct().
-		SavePath("./model/file.go").
+		SavePath("./model/cmf_live_record.go").
 		Dsn("root:password@tcp(xxx.xxx.xx.xx:3306)/sscf_company_module?charset=utf8").
 		TagKey("gorm").
 		EnableJsonTag(true).
-		Table("table_name").
+		Table("cmf_live_record").
 		Run()
 	fmt.Println(err)
 }
