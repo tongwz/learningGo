@@ -9,6 +9,15 @@ import (
 // 相同变量重复 := 赋值可能导致的问题
 func main() {
 	myEx(0)
+	var a = 1
+
+	if a == 1 {
+		fmt.Println("a = 22")
+		return
+	}
+	defer func() {
+		fmt.Println("defer")
+	}()
 }
 
 func myEx(userId int) {
