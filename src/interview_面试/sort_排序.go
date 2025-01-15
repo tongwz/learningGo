@@ -83,7 +83,7 @@ func selectionSort(arr []int) {
 	}
 }
 
-// 插入排序
+// 插入排序 9 8 7
 func insertionSort(arr []int) {
 	n := len(arr)
 	for i := 1; i < n; i++ {

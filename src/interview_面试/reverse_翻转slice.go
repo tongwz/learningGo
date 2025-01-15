@@ -12,6 +12,13 @@ func ReverseSliceInPlace[T any](s []T) {
 	}
 }
 
+func ReverseS2[T any](s []T) {
+	n := len(s)
+	for i := 0; i < n/2; i++ {
+		s[i], s[n-1-i] = s[n-1-i], s[i]
+	}
+}
+
 func main() {
 	// 测试整数 slice
 	intSlice := []int{1, 2, 3, 4, 5}
